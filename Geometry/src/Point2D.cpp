@@ -1,23 +1,71 @@
+#include <cmath>
 #include "Point2D.h"
 
-Point2D::Point2D(double a, double b)
+
+Point2D::Point2D()
 {
-	x = a;
-	y = b;
+	m_x = 0.0;
+	m_y = 0.0;
 }
 
-Point2D::Point2D(const Point2D& point)
+//---------------------------------------------------------------------
+
+Point2D::Point2D(double x, double y)
 {
-	x = point.x;
-	y = point.y;
+	m_x = x;
+	m_y = y;
 }
 
-double Point2D::GetX() const
+//---------------------------------------------------------------------
+
+Point2D::~Point2D()
 {
-	return x;
+
 }
+
+//---------------------------------------------------------------------
+
+double Point2D::GetX()const
+{
+	return m_x;
+}
+
+//---------------------------------------------------------------------
 
 double Point2D::GetY() const
 {
-	return y;
+	return m_y;
 }
+
+//---------------------------------------------------------------------
+
+void Point2D::SetX(double x)
+{
+	m_x = x;
+}
+
+//---------------------------------------------------------------------
+
+void Point2D::SetY(double y)
+{
+	m_y = y;
+}
+
+//---------------------------------------------------------------------
+
+void Point2D::Set(double x, double y)
+{
+	m_x = x;
+	m_y = y;
+}
+
+//---------------------------------------------------------------------
+
+double Point2D::Distance(const Point2D& point) const
+{
+	return sqrt((m_x - point.m_x) * (m_x - point.m_x) +
+		(m_y - point.m_y) * (m_y - point.m_y));
+}
+
+//---------------------------------------------------------------------
+
