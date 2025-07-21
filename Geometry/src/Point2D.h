@@ -23,7 +23,5 @@ public:
 
 	double Distance(const Point2D& point) const;
 
-
-
 };
 
