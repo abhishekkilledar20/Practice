@@ -26,5 +26,6 @@ public:
 
 	double Distance(const Point3D& point)const;
 
+	double Magnitude();
 };
 
